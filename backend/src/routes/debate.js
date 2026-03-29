@@ -3,6 +3,7 @@ const router = express.Router();
 const { callModel } = require('../lib/ai');
 const { systemPromptFor, buildMessages, consensusSystemPrompt, MODEL_NAMES } = require('../lib/prompts');
 const supabase = require('../lib/supabase');
+const crypto = require('crypto');
 
 const MODEL_ORDER = ['claude', 'gpt', 'gemini', 'llama'];
 
