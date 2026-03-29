@@ -51,7 +51,7 @@ async function callGemini(messages, systemPrompt) {
   );
   const data = await res.json();
   if (data.error) throw new Error(`Gemini: ${data.error.message}`);
-  return data.candidates[0].content.parts[0].text;
+  const parts = data.candidates[0].content.parts; const textParts = parts.filter(p => !p.thought); return (textParts.length > 0 ? textParts : parts).map(p => p.text).join('');
 }
 
 async function callLlama(messages, systemPrompt) {
