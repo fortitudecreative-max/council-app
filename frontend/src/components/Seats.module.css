@@ -1,0 +1,66 @@
+.seats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.seat {
+  background: var(--stone);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 14px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.seat.speaking {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.06);
+}
+
+.seat.speaking::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+  animation: pulseBar 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseBar {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.icon {
+  font-size: 26px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.status {
+  font-size: 12px;
+  color: rgba(245,240,232,0.35);
+  font-style: italic;
+}
+
+.seat.speaking .status {
+  color: var(--gold-dim);
+}
+
+@media (max-width: 640px) {
+  .seats { grid-template-columns: repeat(2, 1fr); }
+}

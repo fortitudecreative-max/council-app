@@ -1,0 +1,38 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #c9a84c;
+  --gold-dim: #8a6d2f;
+  --ink: #0d0b08;
+  --parchment: #f5f0e8;
+  --stone: #2a2620;
+  --stone-light: #3d3830;
+  --ember: #c0392b;
+  --border: rgba(201,168,76,0.25);
+  --border-bright: rgba(201,168,76,0.6);
+}
+
+html, body, #root {
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--parchment);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--parchment); }
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }

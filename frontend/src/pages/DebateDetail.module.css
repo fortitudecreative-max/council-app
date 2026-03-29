@@ -1,0 +1,77 @@
+.page { min-height: 100vh; }
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.center {
+  text-align: center;
+  padding: 80px 24px;
+  color: rgba(245,240,232,0.5);
+  font-style: italic;
+}
+
+.header {
+  padding: 40px 0 32px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.back {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  display: block;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+.back:hover { color: var(--gold); }
+
+.ornament {
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.question {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--parchment);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.date {
+  font-size: 13px;
+  color: rgba(245,240,232,0.35);
+  font-style: italic;
+}
+
+.roundHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0 20px;
+}
+
+.roundLine {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.roundLabel {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  white-space: nowrap;
+}

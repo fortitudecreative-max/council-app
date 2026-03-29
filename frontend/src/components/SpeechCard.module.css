@@ -1,0 +1,52 @@
+.card {
+  background: var(--stone);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  animation: fadeUp 0.4s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,0,0,0.2);
+}
+
+.icon { font-size: 18px; }
+
+.name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.tag {
+  margin-left: auto;
+  font-size: 11px;
+  color: rgba(245,240,232,0.3);
+  font-style: italic;
+}
+
+.body {
+  padding: 18px 20px;
+}
+
+.line {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(245,240,232,0.85);
+  margin-bottom: 10px;
+}
+.line:last-child { margin-bottom: 0; }
+.line:empty { display: none; }
