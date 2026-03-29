@@ -28,7 +28,7 @@ async function callGPT(messages, systemPrompt) {
     });
     const data = await res.json();
     if (data.error) throw new Error(`GPT: ${data.error.message}`);
-    return data.choices[0].message.content;
+    return data.choices[0].message.content;h
 }
 
 async function callGemini(messages, systemPrompt) {
@@ -45,7 +45,7 @@ async function callGemini(messages, systemPrompt) {
               body: JSON.stringify({
                         systemInstruction: { parts: [{ text: systemPrompt }] },
                         contents,
-                        generationConfig: { maxOutputTokens: 1000 },
+                        generationConfig: { maxOutputTokens: 8192 },
               }),
       }
         );
@@ -62,7 +62,7 @@ async function callLlama(messages, systemPrompt) {
                   'Content-Type': 'application/json',
                   Authorization: `Bearer ${process.env.TOGETHER_API_KEY}`,
           },
-          body: JSON.stringify({
+          body: JSON.stringify({h
                   model: 'meta-llama/Llama-3.1-70B-Instruct-Turbo',
                   max_tokens: 1000,
                   messages: [{ role: 'system', content: systemPrompt }, ...messages],
