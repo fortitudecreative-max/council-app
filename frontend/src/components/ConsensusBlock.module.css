@@ -30,16 +30,26 @@
   color: var(--gold);
 }
 
-.permalink {
+.shareBtn {
   margin-left: auto;
   font-family: 'Cinzel', serif;
   font-size: 10px;
   letter-spacing: 1px;
   color: var(--gold-dim);
   text-transform: uppercase;
-  transition: color 0.2s;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
 }
-.permalink:hover { color: var(--gold); }
+.shareBtn:hover {
+  color: var(--gold);
+  background: rgba(201,168,76,0.15);
+  border-color: var(--gold);
+}
 
 .body {
   padding: 28px;
