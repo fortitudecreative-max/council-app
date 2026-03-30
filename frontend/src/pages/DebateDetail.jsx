@@ -19,6 +19,7 @@ export default function DebateDetail() {
   const [debate, setDebate] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     fetch(`${API_URL}/api/history/${id}`)
@@ -27,6 +28,13 @@ export default function DebateDetail() {
       .catch(() => { setError('Debate not found.'); setLoading(false); });
   }, [id]);
 
+  function shareDebate() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    });
+  }
+
   if (loading) return <div className={styles.center}>Retrieving debate from archives...</div>;
   if (error) return <div className={styles.center}>{error} <Link to="/history">← Back</Link></div>;
 
@@ -34,7 +42,12 @@ export default function DebateDetail() {
     <div className={styles.page}>
       <div className={styles.app}>
         <header className={styles.header}>
-          <Link to="/history" className={styles.back}>← Archive</Link>
+          <div className={styles.headerNav}>
+            <Link to="/history" className={styles.back}>← Archive</Link>
+            <button onClick={shareDebate} className={styles.shareBtn}>
+              {copied ? '✓ Link copied!' : '⬥ Share this debate'}
+            </button>
+          </div>
           <div className={styles.ornament}>⬥ &nbsp; Debate Record &nbsp; ⬥</div>
           <h1 className={styles.question}>{debate.question}</h1>
           <p className={styles.date}>
